@@ -1,0 +1,16 @@
+## ----- Backend ----- ##
+venv/
+**/__pycache__/
+**/.env
+**/.env.*
+
+## ----- General ----- ## 
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
