@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 import os
 import dotenv
-dotenv.load_dotenv()
+dotenv.load_dotenv(override=True)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,7 +31,7 @@ print(f"DEBUG: {d}")
 DEBUG = d.lower() == "true"
 
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost").split(",")
-
+print(f"ALLOWED_HOSTS: {ALLOWED_HOSTS}")
 
 # Application definition
 
