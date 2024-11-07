@@ -178,9 +178,21 @@ def get_percent_disk(disk):
 ## ----- SERVICES STATS ----- ##
 def get_svc_stats():
   return {
-    "strapi": check_strapi(),
-    "cloudflared": check_cloudflared(),
-    "ssh": check_ssh()
+    "strapi": {
+      "status": check_strapi(),
+      "process": "pm2",
+      "link": "https://strapi.mihirniyogi.com/admin"
+    },
+    "cloudflared": {
+      "status": check_cloudflared(),
+      "process": "docker",
+      "link": "https://dash.cloudflare.com/"
+    },
+    "ssh": {
+      "status": check_ssh(),
+      "process": "systemd",
+      "link": "https://ssh.mihirniyogi.com/"  
+    }
   }
 
 def check_strapi():
