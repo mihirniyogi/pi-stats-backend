@@ -181,6 +181,7 @@ def get_svc_stats():
     "strapi": {
       "status": check_strapi(),
       "process": "pm2",
+      "port": 1337,
       "link": "https://strapi.mihirniyogi.com/admin"
     },
     "cloudflared": {
@@ -191,7 +192,13 @@ def get_svc_stats():
     "ssh": {
       "status": check_ssh(),
       "process": "systemd",
+      "port": 22,
       "link": "https://ssh.mihirniyogi.com/"  
+    },
+    "pi-stats-backend": {
+      "status": True,
+      "process": "pm2",
+      "port": 5000
     }
   }
 
