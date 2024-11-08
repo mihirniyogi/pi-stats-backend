@@ -197,7 +197,7 @@ def get_svc_stats():
 
 def check_strapi():
   try:
-    output = subprocess.check_output(['pm2', 'status']).decode()
+    output = subprocess.check_output(['pm2', 'show', 'strapi']).decode()
     return 'strapi' in output and 'online' in output
   except subprocess.CalledProcessError:
     return False 
