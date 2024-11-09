@@ -64,7 +64,7 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
   "http://localhost:5173",
   "https://rpi.mihirniyogi.com/",
-  "https://pi-stats-frontend.netlify.app/"
+  "https://pi-stats.netlify.app/"
 ]
 
 # Only GET method allowed
