@@ -64,6 +64,7 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
   "http://localhost:5173",
   "https://rpi.mihirniyogi.com/",
+  "https://www.rpi.mihirniyogi.com/",
   "https://pi-stats.netlify.app/"
 ]
 
