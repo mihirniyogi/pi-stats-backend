@@ -27,11 +27,9 @@ SECRET_KEY = os.getenv("SECRET_KEY","")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 d = os.getenv("DEBUG", "True")
-print(f"DEBUG: {d}")
 DEBUG = d.lower() == "true"
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost").split(",")
-print(f"ALLOWED_HOSTS: {ALLOWED_HOSTS}")
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -48,9 +46,9 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -63,9 +61,9 @@ MIDDLEWARE = [
 # Origins allowed to request
 CORS_ALLOWED_ORIGINS = [
   "http://localhost:5173",
-  "https://rpi.mihirniyogi.com/",
-  "https://www.rpi.mihirniyogi.com/",
-  "https://pi-stats.netlify.app/"
+  "https://rpi.mihirniyogi.com",
+  "https://www.rpi.mihirniyogi.com",
+  "https://pi-stats.netlify.app",
 ]
 
 # Only GET method allowed
